@@ -4,8 +4,8 @@ import os
 # CONFIGURATION
 # ------------------------------------------------------------------------------
 # Update these paths according to your local environment
-PRICE_PAID_DATA_PATH = "pp-complete.csv"  # HM Land Registry Data
-EPC_DATA_PATH = "certificates.csv"  # EPC Data
+PRICE_PAID_DATA_PATH = "data/pp-complete.csv"  # HM Land Registry Data
+EPC_DATA_PATH = "data/certificates.csv"  # EPC Data
 
 
 def inspect_data():
