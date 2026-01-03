@@ -3,9 +3,13 @@ from pathlib import Path
 
 # CONFIGURATION
 DATA_DIR = Path("data")
-PRICE_INPUT = DATA_DIR / "price_paid_london_filtered.parquet"
-EPC_INPUT = DATA_DIR / "epc_london_filtered.parquet"
-OUTPUT_FILE = DATA_DIR / "merged_dataset.parquet"
+# PRICE_INPUT = DATA_DIR / "price_paid_london_filtered.parquet"
+# EPC_INPUT = DATA_DIR / "epc_london_filtered.parquet"
+# OUTPUT_FILE = DATA_DIR / "merged_dataset.parquet"
+
+PRICE_INPUT = DATA_DIR / "price_paid_leeds.parquet"
+EPC_INPUT = DATA_DIR / "epc_leeds.parquet"
+OUTPUT_FILE = DATA_DIR / "merged_leeds.parquet"
 
 
 def normalize_address_string(df: pl.LazyFrame, col_name: str, alias: str) -> pl.LazyFrame:

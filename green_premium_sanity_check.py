@@ -3,7 +3,7 @@ from pathlib import Path
 
 # CONFIGURATION
 DATA_DIR = Path("data")
-INPUT_FILE = DATA_DIR / "final_model_ready.parquet"
+INPUT_FILE = DATA_DIR / "model_ready_leeds.parquet"
 
 
 def perform_sanity_check():

@@ -7,9 +7,13 @@ from pathlib import Path
 
 # CONFIGURATION
 DATA_DIR = Path("data")
-INPUT_FILE = DATA_DIR / "final_model_ready.parquet"
+#INPUT_FILE = DATA_DIR / "final_model_ready.parquet"
 MODEL_DIR = Path("models")
-MODEL_PATH = MODEL_DIR / "catboost_price_model.cbm"
+#MODEL_PATH = MODEL_DIR / "catboost_price_model.cbm"
+
+INPUT_FILE = DATA_DIR / "model_ready_leeds.parquet"
+MODEL_PATH = MODEL_DIR / "catboost_leeds_model.cbm"
+
 
 
 def train_price_model():

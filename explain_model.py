@@ -1,6 +1,4 @@
 import polars as pl
-import pandas as pd
-import numpy as np
 from catboost import CatBoostRegressor
 import shap
 import matplotlib.pyplot as plt
@@ -15,7 +13,7 @@ FIGURES_DIR = Path("figures")
 #MODEL_PATH = MODEL_DIR / "catboost_price_model.cbm"
 
 INPUT_FILE = DATA_DIR / "model_ready_leeds.parquet"
-MODEL_PATH = MODEL_DIR / "catboost_leeds.cbm"
+MODEL_PATH = MODEL_DIR / "catboost_leeds_model.cbm"
 
 
 def explain_model_predictions():
