@@ -1,18 +1,15 @@
 import polars as pl
-import os
+import config as cfg
 from pathlib import Path
+import sys
 
-# ------------------------------------------------------------------------------
-# CONFIGURATION
-# ------------------------------------------------------------------------------
-# Define paths relative to the project root
-DATA_DIR = Path("data")
-PRICE_RAW_PATH = DATA_DIR / "pp-complete.csv"
-EPC_RAW_PATH = DATA_DIR / "certificates.csv"
+sys.path.append(str(Path(__file__).resolve().parent))
 
-# Output paths for optimized Parquet files
-PRICE_PROCESSED_PATH = DATA_DIR / "price_paid_london_filtered.parquet"
-EPC_PROCESSED_PATH = DATA_DIR / "epc_london_filtered.parquet"
+PRICE_RAW_PATH = cfg.DATA_DIR / "pp-complete.csv"
+EPC_RAW_PATH = cfg.DATA_DIR / "certificates.csv"
+
+PRICE_PROCESSED_PATH = cfg.RAW_PRICE_FILE
+EPC_PROCESSED_PATH = cfg.RAW_EPC_FILE
 
 
 def process_price_paid_data():

@@ -1,10 +1,12 @@
 import polars as pl
+import sys
 from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent / "src"))
+import config as cfg
 
 # CONFIGURATION
-DATA_DIR = Path("data")
-PRICE_FILE = DATA_DIR / "price_paid_london_filtered.parquet"
-EPC_FILE = DATA_DIR / "epc_london_filtered.parquet"
+PRICE_FILE = cfg.RAW_PRICE_FILE
+EPC_FILE = cfg.RAW_EPC_FILE
 
 
 def run_sanity_check():

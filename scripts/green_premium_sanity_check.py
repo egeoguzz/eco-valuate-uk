@@ -1,9 +1,13 @@
 import polars as pl
+import sys
+import config as cfg
 from pathlib import Path
 
 # CONFIGURATION
-DATA_DIR = Path("data")
-INPUT_FILE = DATA_DIR / "model_ready_leeds.parquet"
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT_DIR / "src"))
+INPUT_FILE = cfg.MODEL_READY_FILE
 
 
 def perform_sanity_check():

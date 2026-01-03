@@ -1,20 +1,17 @@
-import polars as pl
-from catboost import CatBoostRegressor
+import sys
 import shap
+import config as cfg
+import polars as pl
+import matplotlib.ticker as ticker
 import matplotlib.pyplot as plt
+from catboost import CatBoostRegressor
 from pathlib import Path
 
 # CONFIGURATION
-DATA_DIR = Path("data")
-MODEL_DIR = Path("models")
-FIGURES_DIR = Path("figures")
-
-#INPUT_FILE = DATA_DIR / "final_model_ready.parquet"
-#MODEL_PATH = MODEL_DIR / "catboost_price_model.cbm"
-
-INPUT_FILE = DATA_DIR / "model_ready_leeds.parquet"
-MODEL_PATH = MODEL_DIR / "catboost_leeds_model.cbm"
-
+sys.path.append(str(Path(__file__).parent))
+INPUT_FILE = cfg.MODEL_READY_FILE
+MODEL_PATH = cfg.MODEL_PATH
+FIGURES_DIR = cfg.FIGURES_DIR
 
 def explain_model_predictions():
     """
@@ -24,11 +21,11 @@ def explain_model_predictions():
     1. Summary Plot: Global feature importance overview.
     2. Dependence Plot: Isolates the marginal contribution of Energy Ratings to price.
     """
-    print("[INFO] Initializing SHAP explanation pipeline...")
+    print("Initializing SHAP explanation pipeline...")
 
     # 1. Validation and Setup
     if not INPUT_FILE.exists() or not MODEL_PATH.exists():
-        print(f"[ERROR] Required files not found.\nInput: {INPUT_FILE}\nModel: {MODEL_PATH}")
+        print(f"Required files not found.\nInput: {INPUT_FILE}\nModel: {MODEL_PATH}")
         return
 
     if not FIGURES_DIR.exists():
@@ -37,7 +34,7 @@ def explain_model_predictions():
     # 2. Data Loading & Alignment
     # We must replicate the exact feature engineering steps used during training
     # to ensure the feature space matches the model's expectation.
-    print(f"[INFO] Loading dataset from {INPUT_FILE}...")
+    print(f"Loading dataset from {INPUT_FILE}...")
     df = pl.read_parquet(INPUT_FILE)
 
     # Extract Postcode District (e.g., 'SW1A' from 'SW1A 1AA')
@@ -60,35 +57,38 @@ def explain_model_predictions():
     # SHAP TreeExplainer is computationally intensive (`O(TLD^2)` complexity).
     # A random sample of 5,000 instances provides a statistically significant
     # approximation of the global distribution without excessive runtime.
-    print("[INFO] Sampling data (N=5000) for efficient computation...")
+    print("Sampling data (N=5000) for efficient computation...")
     X_sample = df.select(feature_cols).sample(5000, seed=42).to_pandas()
 
     # 4. Model Loading
-    print("[INFO] Loading trained CatBoost Regressor...")
+    print("Loading trained CatBoost Regressor...")
     model = CatBoostRegressor()
     model.load_model(str(MODEL_PATH))
 
     # 5. SHAP Value Calculation
-    print("[INFO] Computing SHAP values using TreeExplainer...")
+    print("Computing SHAP values using TreeExplainer...")
     explainer = shap.TreeExplainer(model)
     shap_values = explainer.shap_values(X_sample)
 
     # 6. Visualization: Global Feature Importance
-    print("[INFO] Generating SHAP Summary Plot...")
-    plt.figure(figsize=(10, 6))
+    print("Generating SHAP Summary Plot...")
+    fig, ax = plt.subplots(figsize=(12, 8))
     shap.summary_plot(shap_values, X_sample, show=False)
-    plt.title("Feature Impact on House Prices (SHAP Summary)", fontsize=12)
+    ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: f'{int(x / 1000)}k' if x != 0 else '0'))
+
+    plt.title(f"Feature Impact on House Prices - {cfg.CURRENT_CITY} (SHAP Summary)", fontsize=14)
+    plt.xlabel("SHAP Value (Impact on Price in GBP)", fontsize=12)
     plt.tight_layout()
 
-    summary_plot_path = FIGURES_DIR / "shap_summary.png"
+    summary_plot_path = cfg.FIGURE_PATH_SUMMARY
     plt.savefig(summary_plot_path, dpi=300)
-    print(f"[SUCCESS] Global importance plot saved to: {summary_plot_path}")
+    print(f"[SUCCESS] Cleaned summary plot saved to: {summary_plot_path}")
     plt.close()
 
     # 7. Visualization: Green Premium Analysis (Dependence Plot)
     # This plot isolates the effect of 'energy_rating_rank' on the predicted price.
     # We disable interaction_index to view the clean, marginal effect of the rating.
-    print("[INFO] Generating Green Premium Dependence Plot...")
+    print("Generating Green Premium Dependence Plot...")
 
     plt.figure(figsize=(10, 6))
     shap.dependence_plot(
@@ -107,12 +107,12 @@ def explain_model_predictions():
     plt.grid(True, linestyle='--', alpha=0.3)
     plt.tight_layout()
 
-    premium_plot_path = FIGURES_DIR / "green_premium_curve.png"
+    premium_plot_path = cfg.FIGURE_PATH_CURVE
     plt.savefig(premium_plot_path, dpi=300)
-    print(f"[SUCCESS] Green Premium curve saved to: {premium_plot_path}")
+    print(f"Green Premium curve saved to: {premium_plot_path}")
     plt.close()
 
-    print("\n[INFO] Pipeline complete. Visualizations are available in the 'figures' directory.")
+    print("\nPipeline complete. Visualizations are available in the 'figures' directory.")
 
 
 if __name__ == "__main__":

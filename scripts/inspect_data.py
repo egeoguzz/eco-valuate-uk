@@ -1,11 +1,10 @@
 import polars as pl
-import os
+import config as cfg
 
 # CONFIGURATION
-# ------------------------------------------------------------------------------
 # Update these paths according to your local environment
-PRICE_PAID_DATA_PATH = "data/pp-complete.csv"  # HM Land Registry Data
-EPC_DATA_PATH = "data/certificates.csv"  # EPC Data
+PRICE_PAID_DATA_PATH = cfg.DATA_DIR / "pp-complete.csv"
+EPC_DATA_PATH = cfg.DATA_DIR / "certificates.csv"
 
 
 def inspect_data():

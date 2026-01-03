@@ -1,9 +1,12 @@
 import polars as pl
+import sys
+import config as cfg
 from pathlib import Path
 
-# CONFIGURATION
-DATA_DIR = Path("data")
-MERGED_FILE = DATA_DIR / "merged_dataset.parquet"
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT_DIR / "src"))
+
+MERGED_FILE = cfg.MERGED_FILE
 
 
 def inspect_merged_data():

@@ -1,15 +1,13 @@
+import sys
 import polars as pl
+import config as cfg
 from pathlib import Path
 
-# CONFIGURATION
-DATA_DIR = Path("data")
-# PRICE_INPUT = DATA_DIR / "price_paid_london_filtered.parquet"
-# EPC_INPUT = DATA_DIR / "epc_london_filtered.parquet"
-# OUTPUT_FILE = DATA_DIR / "merged_dataset.parquet"
+sys.path.append(str(Path(__file__).parent))
 
-PRICE_INPUT = DATA_DIR / "price_paid_leeds.parquet"
-EPC_INPUT = DATA_DIR / "epc_leeds.parquet"
-OUTPUT_FILE = DATA_DIR / "merged_leeds.parquet"
+PRICE_INPUT = cfg.RAW_PRICE_FILE
+EPC_INPUT = cfg.RAW_EPC_FILE
+OUTPUT_FILE = cfg.MERGED_FILE
 
 
 def normalize_address_string(df: pl.LazyFrame, col_name: str, alias: str) -> pl.LazyFrame:
