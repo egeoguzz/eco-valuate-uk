@@ -40,6 +40,8 @@ The summary plots below illustrate the hierarchy of factors influencing price.
 * **Leeds:** Observe the `energy_rating_rank` feature. There is a clear separation: red points (high energy efficiency) are distributed to the right (positive price impact), while blue points (low efficiency) are to the left. This confirms a healthy Green Premium.
 * **London:** The impact of `energy_rating_rank` is negligible. The SHAP values are compressed near zero, dwarfed by the massive impact of `TOTAL_FLOOR_AREA` and `postcode_district`. In London, the marginal gain from a better EPC rating is statistically drowned out by the premium paid for square footage and prestigious locations.
 
+> **Critical Insight (Feature Ranking):** It is important to highlight that **`energy_rating_rank` does not appear in the top 3 features** for the London model. This is an expected and validating outcome of our analysis; in a market driven by extreme demand and historical value, structural attributes (Floor Area) and location (Postcode/Town) dominate the pricing mechanism so heavily that energy efficiency is relegated to a lower tier of importance.
+
 ### 2. The Green Premium Curve (Marginal Effect)
 
 The dependence plots below isolate the specific effect of EPC Rating (1=G, 7=A) on the predicted price.
