@@ -38,7 +38,7 @@ The summary plots below illustrate the hierarchy of factors influencing price.
 
 **Interpretation:**
 * **Leeds:** Observe the `energy_rating_rank` feature. There is a clear separation: red points (high energy efficiency) are distributed to the right (positive price impact), while blue points (low efficiency) are to the left. This confirms a healthy Green Premium.
-* **London:** A striking **inverted trend** is observed. Surprisingly, high energy ratings (red points) cluster to the **left** (negative price impact), while low energy ratings (blue points) cluster to the **right** (positive price impact). This strongly suggests that low energy efficiency acts as a proxy for **period properties** (Victorian/Edwardian homes), which command a significant market premium over modern, energy-efficient new builds.
+* **London:** A striking **inverted trend** is observed. Surprisingly, high energy ratings (red points) cluster to the **left** (negative price impact), while low energy ratings (blue points) cluster to the **right** (positive price impact). This strongly suggests that low energy efficiency acts as a proxy for **period properties**, which command a significant market premium over modern, energy-efficient new builds.
 
 > **Critical Insight (Feature Dominance):** It is observed that structural features like `TOTAL_FLOOR_AREA` and `postcode_district` dominate the top rankings in **both cities**, which is consistent with global real estate fundamentals. 
 >
@@ -56,7 +56,7 @@ The dependence plots below isolate the specific effect of EPC Rating (1=G, 7=A) 
 
 **Key Findings:**
 * **Leeds Trend:** A distinct upward trajectory. Moving from an 'F' rating to a 'C' or 'B' rating yields a tangible increase in property value.
-* **London Trend (The Paradox):** The curve is flat or even inversely correlated in lower bands. Properties with low energy ratings (F/G) frequently command high valuations. This supports the Heritage Paradox: drafty, Victorian-era homes in prime locations are valued significantly higher than modern, energy-efficient apartments, rendering the EPC rating a non-factor in valuation.
+* **London Trend (The Paradox):** The curve is inversely correlated in lower bands. Properties with low energy ratings (F/G) frequently command high valuations. This supports the Heritage Paradox: drafty, Victorian-era homes in prime locations are valued significantly higher than modern, energy-efficient apartments, rendering the EPC rating a non-factor in valuation.
 
 ---
 
