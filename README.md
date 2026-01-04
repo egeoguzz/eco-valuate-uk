@@ -42,9 +42,9 @@ The summary plots below illustrate the hierarchy of factors influencing price.
 
 > **Critical Insight (Feature Dominance):** It is observed that structural features like `TOTAL_FLOOR_AREA` and `postcode_district` dominate the top rankings in **both cities**, which is consistent with global real estate fundamentals. 
 >
-> However, the crucial difference lies in the **magnitude of contribution**:
-> * In **Leeds**, `energy_rating_rank` shows a strong, widespread impact where higher efficiency can significantly shift the property price.
-> * In **London**, while a slight positive separation exists (red points to the right), the impact is **highly compressed**. The marginal gain from a better EPC rating is mathematically trivial compared to the millions of pounds driven by location and square footage, confirming that energy efficiency is not a primary value driver in the capital's heritage-heavy market.
+> However, the crucial difference lies in the **directionality of contribution**:
+> * In **Leeds**, `energy_rating_rank` shows a standard economic behavior: higher efficiency consistently correlates with higher property value.
+> * In **London**, an **inverted pattern** emerges. Contrary to expectation, properties with *lower* energy ratings (blue points) tend to have a positive impact on price, while highly efficient homes (red points) often show a negative impact. This confirms the **Heritage Paradox**: the market places a massive premium on inefficient, period-style properties (Victorian/Georgian), effectively "penalizing" modern, energy-efficient builds in relative valuation terms.
 
 ### 2. The Green Premium Curve (Marginal Effect)
 
