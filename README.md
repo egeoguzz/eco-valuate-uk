@@ -67,7 +67,8 @@ The project has been refactored into a modular, production-ready pipeline center
 ```text
 ├── src/
 │   ├── config.py              # Central control for paths and city selection (London/Leeds)
-│   ├── filter_data.py         # City-specific ingestion (Broad scope for London, Exact for Leeds)
+│   ├── filter_data.py             # Primary ingestion pipeline optimized for London (Broad geospatial scope)
+│   ├── prepare_comparison_city.py # Standardized ingestion for Control Cities (e.g., Leeds, Manchester)
 │   ├── merge_data.py          # Fuzzy matching logic for address reconciliation
 │   ├── feature_engineering.py # Outlier removal and feature vectorization
 │   ├── train_model.py         # CatBoost training with fixed random seeds for reproducibility
