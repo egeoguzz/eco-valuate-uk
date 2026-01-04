@@ -1,9 +1,9 @@
 # The Heritage Paradox: Decoupling Energy Efficiency from Property Value in the UK Housing Market
 
 ## Abstract
-This project investigates the relationship between Energy Performance Certificates (EPC) and residential property prices in the United Kingdom. While the "Green Premium" hypothesis suggests that energy-efficient homes command higher market values, our analysis reveals a significant divergence in the London market. We term this phenomenon **"The Heritage Paradox"**: in London, location and historical character (often associated with lower energy efficiency) outweigh the financial benefits of modern energy standards.
+This project investigates the relationship between Energy Performance Certificates (EPC) and residential property prices in the United Kingdom. While the "Green Premium" hypothesis suggests that energy-efficient homes command higher market values, my analysis reveals a significant divergence in the London market. We term this phenomenon **"The Heritage Paradox"**: in London, location and historical character (often associated with lower energy efficiency) outweigh the financial benefits of modern energy standards.
 
-To validate this hypothesis, we employed a comparative analysis using **Leeds** as a control group, demonstrating that standard market behaviors regarding energy efficiency remain intact outside the capital.
+To validate this hypothesis, I employed a comparative analysis using **Leeds** as a control group, demonstrating that standard market behaviors regarding energy efficiency remain intact outside the capital.
 
 ---
 
