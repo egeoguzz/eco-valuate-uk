@@ -15,18 +15,18 @@ The analysis integrates two primary datasets:
 - **DLUHC EPC Certificates:** Detailed energy performance metrics for domestic buildings.
 
 ### 2. Addressing Market Inflation
-Analyzing property prices over a multi-year period requires accounting for significant market inflation. Rather than a simple CPI adjustment, we incorporated **transaction year** and **temporal features** directly into our Gradient Boosting model. This allows the model to learn non-linear inflation trends specific to each housing market segment, ensuring that a 2018 price is comparable to a 2024 price in terms of purchasing power parity within the model's logic.
+Analyzing property prices over a multi-year period requires accounting for significant market inflation. Rather than a simple CPI adjustment, I incorporated **transaction year** and **temporal features** directly into our Gradient Boosting model. This allows the model to learn non-linear inflation trends specific to each housing market segment, ensuring that a 2018 price is comparable to a 2024 price in terms of purchasing power parity within the model's logic.
 
 ### 3. The "Control Group" Strategy (Why Leeds?)
-To verify that the lack of energy-price correlation in London was a genuine market feature and not a modeling error, we introduced **Leeds** as a control variable.
+To verify that the lack of energy-price correlation in London was a genuine market feature and not a modeling error, I introduced **Leeds** as a control variable.
 - **Hypothesis:** If the model is functional, it should detect a standard Green Premium in a typical UK city (Leeds).
-- **Validation:** By training the exact same pipeline on Leeds data, we confirmed a positive correlation between EPC ratings and price. This validates that the flat/negative trend observed in London is a true economic signal, not a technical artifact.
+- **Validation:** By training the exact same pipeline on Leeds data, I confirmed a positive correlation between EPC ratings and price. This validates that the flat/negative trend observed in London is a true economic signal, not a technical artifact.
 
 ---
 
 ## Empirical Results & Discussion
 
-Our analysis utilizes **SHAP (SHapley Additive exPlanations)** values to isolate the marginal contribution of each feature to the final property price.
+My analysis utilizes **SHAP (SHapley Additive exPlanations)** values to isolate the marginal contribution of each feature to the final property price.
 
 ### 1. Global Feature Importance (SHAP Summary)
 
