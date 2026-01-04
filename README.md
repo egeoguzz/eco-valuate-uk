@@ -34,7 +34,7 @@ The summary plots below illustrate the hierarchy of factors influencing price.
 
 | **Leeds (Control Group)** | **London (Heritage Market)** |
 |:-------------------------:|:----------------------------:|
-| ![SHAP Summary Leeds](shap_summary_leeds.png) | ![SHAP Summary London](shap_summary_london.png) |
+| ![SHAP Summary Leeds](figures/shap_summary_leeds.png) | ![SHAP Summary London](figures/shap_summary_london.png) |
 
 **Interpretation:**
 * **Leeds:** Observe the `energy_rating_rank` feature. There is a clear separation: red points (high energy efficiency) are distributed to the right (positive price impact), while blue points (low efficiency) are to the left. This confirms a healthy Green Premium.
