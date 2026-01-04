@@ -46,7 +46,7 @@ The dependence plots below isolate the specific effect of EPC Rating (1=G, 7=A) 
 
 | **Leeds Market Behavior** | **London Market Behavior** |
 |:-------------------------:|:--------------------------:|
-| ![Green Premium Leeds](green_premium_curve_leeds.png) | ![Green Premium London](green_premium_curve_london.png) |
+| ![Green Premium Leeds](figures/green_premium_curve_leeds.png) | ![Green Premium London](figures/green_premium_curve_london.png) |
 
 **Key Findings:**
 * **Leeds Trend:** A distinct upward trajectory. Moving from an 'F' rating to a 'C' or 'B' rating yields a tangible increase in property value (approx. £20k-£50k premium).
