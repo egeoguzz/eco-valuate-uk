@@ -44,7 +44,7 @@ The summary plots below illustrate the hierarchy of factors influencing price.
 >
 > However, the crucial difference lies in the **directionality of contribution**:
 > * In **Leeds**, `energy_rating_rank` shows a standard economic behavior: higher efficiency consistently correlates with higher property value.
-> * In **London**, an **inverted pattern** emerges. Contrary to expectation, properties with *lower* energy ratings (blue points) tend to have a positive impact on price, while highly efficient homes (red points) often show a negative impact. This confirms the **Heritage Paradox**: the market places a massive premium on inefficient, period-style properties (Victorian/Georgian), effectively "penalizing" modern, energy-efficient builds in relative valuation terms.
+> * In **London**, an **inverted pattern** emerges. Contrary to expectation, properties with *lower* energy ratings tend to have a positive impact on price, while highly efficient homes often show a negative impact. This confirms the **Heritage Paradox**: the market places a massive premium on inefficient, period-style properties, effectively "penalizing" modern, energy-efficient builds in relative valuation terms.
 
 ### 2. The Green Premium Curve (Marginal Effect)
 
