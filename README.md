@@ -55,7 +55,7 @@ The dependence plots below isolate the specific effect of EPC Rating (1=G, 7=A) 
 | ![Green Premium Leeds](figures/green_premium_curve_leeds.png) | ![Green Premium London](figures/green_premium_curve_london.png) |
 
 **Key Findings:**
-* **Leeds Trend:** A distinct upward trajectory. Moving from an 'F' rating to a 'C' or 'B' rating yields a tangible increase in property value (approx. £20k-£50k premium).
+* **Leeds Trend:** A distinct upward trajectory. Moving from an 'F' rating to a 'C' or 'B' rating yields a tangible increase in property value.
 * **London Trend (The Paradox):** The curve is flat or even inversely correlated in lower bands. Properties with low energy ratings (F/G) frequently command high valuations. This supports the Heritage Paradox: drafty, Victorian-era homes in prime locations are valued significantly higher than modern, energy-efficient apartments, rendering the EPC rating a non-factor in valuation.
 
 ---
